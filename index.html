@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html translate="no" class="resize" lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./img/9_intro_outro_screens/sombrero.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <title>El Pollo Loco</title>
+  </head>
+  <body>
+    <main id="main">
+      <h1 id="main-header">El Pollo Loco</h1>
+
+      <div id="main-container">
+        <div id="start-container">
+          <div id="start-container-screen">
+            <img
+              src="./img/9_intro_outro_screens/start/startscreen_1.png"
+              alt="Start screen"
+            />
+          </div>
+          <div id="controllers">
+            <div id="container-controller">
+              <div class="controllers" onclick="infoBox()">
+                <img src="./img/info.png" alt="Info img" />
+              </div>
+              <div class="controllers" onclick="gameInstruction()">
+                <img src="./img/gamepad.png" alt="Info img" />
+              </div>
+              <div class="controllers" onclick="toggleSound()">
+                <img
+                  id="image-element"
+                  src="./img/volume-down.png"
+                  alt="Info img"
+                />
+              </div>
+              <div class="controllers" onclick="toggleFullScreen()">
+                <img src="./img/fullscreen.png" alt="Info img" />
+              </div>
+              <div id="controller" class="controllers" onclick="init()">
+                <img src="./img/power.png" alt="Info img" />
+              </div>
+            </div>
+
+            <div class="info-box-container">
+              <h2>El Pollo Loco</h2>
+              <p>
+                "El Pollo Loco" is an action-packed game featuring chickens of
+                all sizes. Battle various chickens, collect coins, and
+                mysterious bottles to take on the ultimate challenge: defeating
+                the monstrous Endboss Big Chicken. Use your bottles
+                strategically to become the ultimate poultry champion!
+              </p>
+              <img
+                onclick="closeInfoBox('infoBoxContainer')"
+                class="close-img"
+                src="./img/close.png"
+                alt="Close img"
+              />
+            </div>
+
+            <div class="game-instruction-container">
+              <h2>Keyboard instructions:</h2>
+              <div class="keyboard-keys">
+                <img
+                  class="instruction"
+                  src="./img/arrow-left.png"
+                  alt="Arrow left img"
+                />
+              </div>
+              <p class="instructions-text">Move Left</p>
+
+              <div class="keyboard-keys">
+                <img
+                  class="instruction"
+                  src="./img/arrow-right.png"
+                  alt="Arrow left img"
+                />
+              </div>
+              <p class="instructions-text">Move Right</p>
+
+              <div class="keyboard-keys">
+                <img
+                  class="instruction"
+                  src="./img/space.png"
+                  alt="Arrow left img"
+                />
+              </div>
+              <p class="instructions-text">Jump</p>
+
+              <div class="keyboard-keys">
+                <img
+                  class="instruction"
+                  src="./img/letter-D.png"
+                  alt="Arrow left img"
+                />
+              </div>
+              <p class="instructions-text">Throw bottle</p>
+
+              <img
+                onclick="closeInfoBox('instructionsContainer')"
+                class="close-img"
+                src="./img/close.png"
+                alt="Close img"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="end-container">
+          <div id="end-container-items">
+            <div id="end-container-img">
+              <img id="game-over-img" src="" alt="Game Over" />
+            </div>
+            <div class="controllers" id="reload-container">
+              <img src="img/reload.png" alt="Reload img" />
+            </div>
+          </div>
+        </div>
+        <div id="mobile-controllers">
+          <div id="controllers-container">
+            <div id="controllers-left">
+              <div id="left" class="controllers controllers-mobile">
+                <img src="./img/arrow-left-mobile.png" alt="Arrow left img" />
+              </div>
+              <div id="right" class="controllers controllers-mobile">
+                <img src="./img/arrow-right-mobile.png" alt="Arrow right img" />
+              </div>
+            </div>
+            <div id="controllers-right">
+              <div id="jump" class="controllers controllers-mobile">
+                <img src="./img/arrow-up-mobile.png" alt="Arrow up img" />
+              </div>
+              <div id="throw" class="controllers controllers-mobile">
+                <img src="./img/bottle.png" alt="Bottle img" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="change-orientation" class="overlay">
+          <h2>PLEASE ROTATE</h2>
+          <h2>YOUR DEVICE</h2>
+        </div>
+        <canvas id="canvas" width="720" height="480"></canvas>
+      </div>
+    </main>
+
+    <script src="./js/helper.js"></script>
+    <script src="./models/drawable-object.class.js"></script>
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./models/moveable-object.class.js"></script>
+    <script src="./models/cloud.class.js"></script>
+    <script src="./models/life-status-bar.class.js"></script>
+    <script src="./models/coin-status-bar.class.js"></script>
+    <script src="./models/bottle-status-bar.class.js"></script>
+    <script src="./models/boss-status-bar2.class.js"></script>
+    <script src="./models/boss-status-bar.class.js"></script>
+    <script src="./models/coins.class.js"></script>
+    <script src="./models/bottle.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/chicken.class.js"></script>
+    <script src="./models/small-chicken.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./models/throwable-object.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

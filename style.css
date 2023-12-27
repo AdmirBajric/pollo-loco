@@ -1,0 +1,271 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --fontWeight: 400;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/9_intro_outro_screens/desert.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Wellfleet", serif;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+canvas {
+  background-color: var(--black);
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+}
+
+#main-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#main-container,
+canvas,
+#container-controller,
+#controllers {
+  width: 72rem;
+  height: 48rem;
+}
+
+#start-container-screen,
+#container-controller,
+#controllers {
+  position: absolute;
+}
+
+#controllers {
+  display: flex;
+  justify-content: center;
+}
+
+#start-container-screen {
+  width: 100%;
+  height: 100%;
+}
+
+#start-container-screen img {
+  width: 100%;
+  height: 100%;
+}
+
+#container-controller {
+  width: 25rem;
+  height: 98%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+#container-controller img {
+  width: 2rem;
+}
+
+.controllers,
+.close-img {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #a0220a;
+  cursor: pointer;
+  box-shadow: 0 0 0.1rem 0.1rem #ffdf00;
+}
+
+.controllers:hover,
+.close-img:hover {
+  transform: scale(1.1);
+}
+
+.info-box-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.4rem;
+  z-index: 3;
+}
+
+.instruction {
+  width: 3rem;
+  height: 3rem;
+}
+
+.game-instruction-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.info-box-container,
+.game-instruction-container {
+  display: none;
+  width: 30rem;
+  height: 36rem;
+  background-color: #fff;
+  margin-top: 4rem;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.game-instruction-container h2 {
+  margin-bottom: 2rem;
+}
+
+.keyboard-keys {
+  width: 6rem;
+  height: 3.5rem;
+  background-color: rgba(255, 223, 0, 0.3);
+  box-shadow: 0 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#end-container {
+  width: 72rem;
+  height: 48rem;
+  position: absolute;
+  display: none;
+}
+
+#end-container-items {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#end-container-img,
+#reload-container {
+  position: absolute;
+}
+
+#end-container-img img {
+  width: 72rem;
+  height: 48rem;
+}
+
+#reload-container {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 4rem;
+  z-index: 2;
+}
+
+#reload-container img {
+  width: 2.5rem;
+}
+
+#mobile-controllers {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+
+#controllers-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#controllers-container img {
+  width: 3rem;
+}
+
+#controllers-left {
+  width: 10rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#controllers-right {
+  width: 10rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+}
+
+#change-orientation {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  color: antiquewhite;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
